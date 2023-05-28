@@ -1,0 +1,18 @@
+name: Rodar Msgram
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+    msgram:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+
+        - name: Usa o MeasureSoftGram para calcular as métricas
+          uses: fga-eps-mds/2023-1-measuresoftgram-action@v0.1
+          with:
+            host: ${{ secrets.SQHost }}
+            githubToken: ${{ secrets.GITHUB_TOKEN }}
