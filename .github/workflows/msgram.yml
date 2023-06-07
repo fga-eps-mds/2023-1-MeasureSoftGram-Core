@@ -11,8 +11,8 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v3
 
-        - name: Usa o MeasureSoftGram para calcular as métricas
-          uses: fga-eps-mds/2023-1-measuresoftgram-action@v0.1
+        - name: Usar o MeasureSoftGram para calcular as métricas
+          uses: fga-eps-mds/2023-1-measuresoftgram-action@v0.2
           with:
-            host: ${{ secrets.SQHost }}
             githubToken: ${{ secrets.GITHUB_TOKEN }}
+            msgramConfigPath: "./.github/input/msgram.json"
