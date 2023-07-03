@@ -1,0 +1,19 @@
+on:
+    pull_request:
+      branches: [ action/test ]
+      types: [ closed ]
+on:
+    push:
+        branches: [ action/test2 ]
+
+  jobs:
+    msgram_job:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+        - name: Action MeasureSoftGram
+            uses: fga-eps-mds/2023-1-MeasureSoftGram-Action@v2.1
+        with:
+            githubToken: ${{ secrets.GITHUB_TOKEN }}
+            msgramServiceToken: ${{ secrets.MSGRAM_SERVICE_TOKEN }}
