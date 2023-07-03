@@ -20,3 +20,4 @@ jobs:
               with:
                 githubToken: ${{ secrets.GITHUB_TOKEN }}
                 msgramServiceToken: ${{ secrets.MSGRAM_SERVICE_TOKEN }} 
+                productName: "MeasureSoftGram"
